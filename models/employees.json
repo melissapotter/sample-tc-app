@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Mel",
+        "employeeID": "1234",
+        "department": "Sales"
+    },
+    
+    {
+        "name": "Joe",
+        "employeeID": "5678",
+        "department": "Finance",
+    },
+    
+        {
+        "name": "Christian",
+        "employeeID": "91011",
+        "department": "Marketing",
+    },
+    
+        {
+        "name": "Lisette",
+        "employeeID": "121314",
+        "department": "Communications",
+    }
+    
+    ]

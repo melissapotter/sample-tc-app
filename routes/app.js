@@ -12,21 +12,22 @@ mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
 
-//add new employee in db
-app.post('/employee', function(req, res){
-    Employee.create(req.body);
-    res.send({type: 'POST',
-            employeeID: req.body.employeeID,
-            name: req.body.name,
-            department: req.body.department
+//get a list of employees from db
+app.get('/empinfo', function(req, res, next){
+    // get a list of all employees from db
+    Employee.find({}).then(function(employees){
+        res.send(employees);
     });
-
+    console.log(req);
 });
 
-//retrieve emp data
-app.get('/empinfo', function(req, res){
-    res.send({type: 'POST'});
-    console.log(req);
+//add new employee and save in db
+app.post('/employee', function(req, res){
+    Employee.create(req.body).then(function(employee){
+    res.send(employee);  
+    });
+
+
 });
 
 //clock in
